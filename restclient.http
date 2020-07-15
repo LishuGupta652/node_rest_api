@@ -1,6 +1,9 @@
 GET http://localhost:3000/posts
 
 ###
+GET http://localhost:3000/posts/5f0f0ed467ae6329a0cd680e
+
+###
 
 POST http://localhost:3000/posts 
 content-type: application/json
@@ -16,6 +19,20 @@ POST http://localhost:3000/posts
 content-type: application/json
 
 {
-    "title" :  "another post",
+    "title" :  "second post",
+    "description" : "This is my awesome Description"
+}   
+
+
+###
+DELETE  http://localhost:3000/posts/5f0f13304618ea2ddcfcb327
+
+
+###
+PATCH http://localhost:3000/posts/5f0f13774618ea2ddcfcb329
+content-type: application/json
+
+{
+    "title" :  "third post",
     "description" : "This is my awesome Description"
 }   
