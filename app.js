@@ -2,7 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cors = require("cors");
 
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -16,7 +18,7 @@ app.get("/", (req, res) => {
 
 // Connect to DB
 mongoose.connect(
-  process.env.DBURL,
+  "mongodb+srv://lishugupta652:lishugupta652@firstcluster-76qkd.mongodb.net/<dbname>?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("connected to DataBase!")
 );

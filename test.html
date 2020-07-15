@@ -9,8 +9,16 @@
     <h1>hello there</h1>
   </body>
   <script>
-    fetch("http://localhost:3000").then((result) => {
-      console.log(result);
+    fetch("http://localhost:3000/posts")
+      .then((result) => {
+        return result.json();
+      })
+      .then((data) => {
+        console.log(data);
+      });
+
+    fetch("http://localhost:3000/posts").then((result) => {
+      console.log(result.json());
     });
   </script>
 </html>
