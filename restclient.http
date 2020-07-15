@@ -36,3 +36,7 @@ content-type: application/json
     "title" :  "third post",
     "description" : "This is my awesome Description"
 }   
+
+###
+
+GET https://intense-dusk-11133.herokuapp.com/posts

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "heroku": "git push heroku master",
+    "github": "git push github master"
   },
   "keywords": [],
   "author": "lishu gupta",

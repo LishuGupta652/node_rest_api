@@ -13,7 +13,7 @@ const postRouter = require("./routes/posts");
 app.use("/posts", postRouter);
 
 app.get("/", (req, res) => {
-  res.send("hello");
+  res.redirect("https://lishugupta.ml");
 });
 
 // Connect to DB
