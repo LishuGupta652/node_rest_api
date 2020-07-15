@@ -1,0 +1,21 @@
+GET http://localhost:3000/posts
+
+###
+
+POST http://localhost:3000/posts 
+content-type: application/json
+
+{
+    "title" :  "First post",
+    "description" : "This is my Description of awesome lovelife"
+}   
+
+###
+
+POST http://localhost:3000/posts 
+content-type: application/json
+
+{
+    "title" :  "another post",
+    "description" : "This is my awesome Description"
+}   
