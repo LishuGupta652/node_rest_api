@@ -6,19 +6,20 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>hello there</h1>
+    <div class="post"></div>
   </body>
   <script>
+    const post = document.querySelector(".post");
     fetch("http://localhost:3000/posts")
       .then((result) => {
         return result.json();
       })
       .then((data) => {
         console.log(data);
+        data.forEach((eachpost) => {
+          console.log(post);
+          post.innerHTML += `<h1>${eachpost.title}</h1> <br>`;
+        });
       });
-
-    fetch("http://localhost:3000/posts").then((result) => {
-      console.log(result.json());
-    });
   </script>
 </html>
