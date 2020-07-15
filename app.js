@@ -1,20 +1,23 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
 
-// Middleware
-app.use("/posts", (req, res, next) => {
-  console.log("this is the middleware running");
-  next();
-});
-// Router
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+//Routes
+const postRouter = require("./routes/posts");
+app.use("/posts", postRouter);
+
 app.get("/", (req, res) => {
   res.send("hello");
 });
 
-app.get("/posts", (req, res) => {
-  res.send("we are on posts ");
-});
+// Connect to DB
+mongoose.connect(process.env.DBURL, { useNewUrlParser: true }, () =>
+  console.log("connected to DataBase!")
+);
 
 // listen
 const PORT = process.env.PORT || 3000;
